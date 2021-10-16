@@ -1,0 +1,44 @@
+Ejecución en local (Mismo equipo entorno de desarrollo)
+node v13.12.0
+npm 7.22.0
+
+En el docker-compose configurar el extra host de mongo con el ip actual de la PC
+Ejecutar docker desktop
+En carpetas services: (Correr servicios mongo y EMQX)
+docker-compose up
+
+En carpeta app: (Ejecutar aplicacion)
+npm run dev
+
+Usuario:bachediaz@gmail.com 
+Clave:Bpjm2828
+
+
+
+Problemas
+No se conecta la API A MONGO -> Es incorrecto el IP del extra-host de mongo en el docker-compose
+
+
+
+
+
+Ejecutar en PC
+node v14.17.6
+npm 6.14.15
+
+En carpeta services ...
+Previamente configusrar en el docker compose el extra-host de emqx con el ip de la PC
+docker-compose up
+En carpeta app (Abrir en un CMD de NODE)
+
+git clone https://github.com/ingeniot/IoT2021_app.git      Para traer la aplicación desde el repositorio
+Crear aechivo .env (como entorno de desarrollo)
+npm install                                                 Para generar la carpeta node_modules con todas  las dependencias
+npm run dev
+
+Problemas
+Error al ejecutar npm install
+    Se borro carpeta node_modules y archivo package-lock.json y se ejecutó nuevamente npm install
+
+
+

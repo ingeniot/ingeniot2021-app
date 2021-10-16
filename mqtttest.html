@@ -1,0 +1,42 @@
+Mqtt Test
+<script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+<script>
+const clientId='mqtt_'+Math.random();
+const host = 'ws://localhost:8083/mqtt';
+const options = {
+    keepalive: 60,
+    clientId: clientId,
+    protocolId:'MQTT',
+    protocolVersion: 4,  
+    port: 8083,
+    host:'localhost',
+    endpoint: '/mqtt',
+    //username: null,
+    username:"superuser",
+    //password: null,
+    password:"superuser",
+    connectTimeOut: 30*1000,
+    reconnectPeriod: 1000,
+    //protocolId:'MQIsdp',
+    //protocolVersion: 3,
+    clean: true,
+    //encoding: 'utf8'
+    will: {
+        topic: 'WillMsg',
+        payload: 'Connection closed abnormally...!',
+        qos: 0,
+        retain: false
+          },
+}
+console.log('Connecting MQTT client');
+const client = mqtt.connect(host, options);
+client.on('connect',()=>{
+    console.log('Success!');
+})
+client.on('error',(error)=>{
+    console.log('Conection error!',error);
+})
+client.on('reconnect',()=>{
+    console.log('Reconecting!');
+})
+</script>
