@@ -666,7 +666,7 @@
         <div class="row">
           <el-table :data="dashboards">
             <el-table-column min-width="50" label="#" align="center">
-              <div class="photo" slot-scope="{ $index }">
+              <div class="photo" slot-scope="{ row, $index }">
                 {{ $index + 1 }}
               </div>
             </el-table-column>

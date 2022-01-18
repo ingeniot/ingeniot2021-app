@@ -41,7 +41,7 @@
 
                <el-table :data="$store.state.devices">
                     <el-table-column label="#" min-width="50" allign="center">
-                        <div slot-scope= "{ row, $index}">
+                        <div slot-scope= "{ $index}">
                             {{$index+1}}
                         </div>
                     </el-table-column>
@@ -52,7 +52,7 @@
                     <el-table-column label="Device Type"  prop="type"></el-table-column>
                     <el-table-column label="Dashboard"  prop="dashboardName"></el-table-column>
                     <el-table-column label="Actions">
-                        <div slot-scope="{row, $index}">
+                        <div slot-scope="{row}">
                             <el-tooltip content="Saver status indicator" style="margin-right:10px">
                                 <i class="fas fa-database" :class="{'text-success': row.saverRule.status,'text-dark': !row.saverRule.status}"></i>
                             </el-tooltip>
